@@ -1,14 +1,15 @@
 pipeline {
     agent any
     environment {
-        centos = credentials('jenkinsslaveuser')
+        DEPLOY_TO = 'production'
     }
     stages {
-        stage ('Build') {
+        stage ('Deploy') {
+            when {
+                environment name: 'DEPLOY_TO', value: 'production'
+            }
             steps {
-                echo "Linux slave login credentials are ${centos}"
-                echo "user id is : ${centos_USR}"
-                echo "password is : ${centos_PSW}"
+                echo "Deploying"
             }
         }
     }
