@@ -9,7 +9,9 @@ pipeline {
                 not {
                    equals expected: 'prod', actual: "${DEPLOY_TO}" 
                 }
-                
+            steps {
+                echo "Deploying"
+            }    
             }
         }
     }
