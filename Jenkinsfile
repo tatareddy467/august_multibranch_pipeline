@@ -1,18 +1,14 @@
 pipeline {
     agent any
     environment {
-        name = 'Naani'
-        course = 'k8s'
+        centos = credentials('jenkinsslaveuser')
     }
     stages {
         stage ('Build') {
-            environment {
-                cloud = 'GCP'
-            }
             steps {
-                echo "Welcome Naani"
-                echo "you enrolled to ${course} course"
-                echo "you are certified in ${cloud}"
+                echo "Linux slave login credentials are ${centos}"
+                echo "user id is : ${centos_USR}"
+                echo "password is : ${centos_PSW}"
             }
         }
     }
