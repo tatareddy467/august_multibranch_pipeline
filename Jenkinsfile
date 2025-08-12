@@ -12,10 +12,16 @@ pipeline {
             }
         }
         stage ('deploy to stage') {
-            echo "Deploying to stage environment"
+            steps {
+                echo "Deploying to stage environment"
+            }
+            
         }
         stage ('deploy to dev') {
-            echo "Deploying to dev environment"
+            steps {
+                echo "Deploying to dev environment"
+            }
+            
         }
     }
 }
