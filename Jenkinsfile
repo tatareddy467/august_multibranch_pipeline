@@ -6,11 +6,10 @@ pipeline {
     stages {
         stage ('Deploy') {
             when {
-                equals expected: 'production', actual: "${DEPLOY_TO}"
-                //environment name: 'DEPLOY_TO', value: 'production'
-            }
-            steps {
-                echo "Deploying"
+                not {
+                   equals expected: 'prod', actual: "${DEPLOY_TO}" 
+                }
+                
             }
         }
     }
