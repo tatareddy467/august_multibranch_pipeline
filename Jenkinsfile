@@ -5,7 +5,9 @@ pipeline {
     }
     stages {
         stage ('Build') {
+            steps {
             echo "Welcome to Build Stage"
+            }
         }
         stage ('Deploy to dev') {
             steps {
