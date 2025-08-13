@@ -1,27 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage ('Stages Running in parallel') {
-            parallel {
-                stage ('SonarScan') {
-                    steps {
-                        echo "Executing Sonar Scans"
-                        sleep 10
-                    }
+        stage ('Build') {
+            steps {
+                timeout (time: 300, unit: 'SECONDS'){
+                    input message: 'Are you Building the application', ok: 'yes', submitter: 'Naani'
                 }
-                stage ('FortifyScan') {
-                    steps {
-                        echo "Executing Fortify Scans"
-                        sleep 10
-                        error "Simulating error during Fortify"
-                    }
-                }
-                stage ('Checkmarx Scan') {
-                    steps {
-                        echo "Executing Checkmarx Scans"
-                        sleep 10
-                    }
-                }
+                echo "Builing the Application"
             }
         }
     }
