@@ -26,5 +26,10 @@ pipeline {
             }
             
         }
+        stage ('Final') {
+            steps {
+                echo "Final stage executed"
+            }
+        }
     }
 }
