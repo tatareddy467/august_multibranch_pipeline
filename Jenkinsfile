@@ -6,29 +6,23 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-            echo "Welcome to Build Stage"
+                echo "Welcome to Build stage"
             }
         }
-        stage ('Deploy to dev') {
+        stage ('Deploy To Dev Environment') {
             steps {
-                echo "Deploying to Dev environment"
+                echo "Deploying to Dev Environment"
             }
         }
-        stage ('Deploy to Stage') {
+        stage ("Deploy to Stage Environment") {
             when {
-                allOf {
-                    branch 'production'
+                anyOf {
                     environment name: 'DEPLOY_TO', value: 'production'
+                    branch 'production'
                 }
             }
             steps {
                 echo "Deploying to Stage Environment"
-            }
-            
-        }
-        stage ('Final') {
-            steps {
-                echo "Final stage executed"
             }
         }
     }
