@@ -1,4 +1,3 @@
-//This is for parameters example
 pipeline {
     agent any
     parameters {
@@ -9,7 +8,7 @@ pipeline {
     stages {
         stage ('Example') {
             steps {
-                echo "Hello Naani"
+                echo "Hello ${params.PERSON}"
             }
         }
     }
