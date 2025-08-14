@@ -1,12 +1,15 @@
+//This is for parameters example
 pipeline {
     agent any
+    parameters {
+        //string, text, booleanParameter, choice, password
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+        string (name: 'BRANCH_NAME', defaultValue: 'main', description: 'what is the should i build?')
+    }
     stages {
-        stage ('Build') {
+        stage ('Example') {
             steps {
-                timeout (time: 300, unit: 'SECONDS'){
-                    input message: 'Are you Building the application', ok: 'yes', submitter: 'tata'
-                }
-                echo "Builing the Application"
+                echo "Hello Naani"
             }
         }
     }
