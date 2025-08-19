@@ -18,5 +18,9 @@ pipeline {
             echo "post activity ...... failed is called"
 
         }
+        always {
+            // mail notification is typically used here
+            echo "Always block Triggered"
+        }
     }
 }
