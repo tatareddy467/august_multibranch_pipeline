@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage ('Build') {
             steps {
-                echo "Building the application"
+                error("Failing the stage intentionally")
+                //echo "Building the application"
             }
         }
     }
@@ -19,8 +20,3 @@ pipeline {
         }
     }
 }
-
-
-
-
-//error("Failing the stage intentionally")
