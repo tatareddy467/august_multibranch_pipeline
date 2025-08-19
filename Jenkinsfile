@@ -17,7 +17,7 @@ pipeline {
                 message "Should we continue?"
                 ok "Approved"
                 submitter "pranav"
-                submitParameter "whoApproved"
+                submitterParameter "whoApproved"
             }
             parameters {
                 string(name: 'CHANGE_TICKET', defaultValue: 'CH12345', description: 'Please Enter Change Ticket Number')
