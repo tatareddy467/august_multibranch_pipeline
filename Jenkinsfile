@@ -25,9 +25,9 @@ pipeline {
                 }
             }
             steps {
-                echo "The change ticket is ${params.CHANGE_TICKET}"
+                echo "The change ticket is ${CHANGE_TICKET}"
                 echo "Deploying to production environment"
-                echo "This is a ${params.Release} release"
+                echo "This is a ${Release} release"
                 echo "Approved by ${WhoApproved}"
             }
         }
