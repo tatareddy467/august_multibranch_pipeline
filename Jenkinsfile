@@ -14,7 +14,7 @@ pipeline {
                 message "Should we continue ???"
                 ok "Approved"
                 submitter "pranav"
-                submitterParameter "Who Approved"
+                submitterParameter "WhoApproved"
                 parameters {
                     string(name: 'CHANGE_TICKET', defaultValue: 'CH12345', description: 'Please Enter Change Ticket Number')
                     booleanParam(name: 'SRE Approved', defaultValue: true, description: 'Is approval taken from SRE???')
@@ -28,7 +28,7 @@ pipeline {
                 echo "The change ticket is ${params.CHANGE_TICKET}"
                 echo "Deploying to production environment"
                 echo "This is a ${params.Release} release"
-                echo "Approved by ${Who Approved}"
+                echo "Approved by ${WhoApproved}"
             }
         }
     }
